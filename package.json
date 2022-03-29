@@ -4,8 +4,9 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview"
+    "build": "npm run build-deps && tsc && vite build",
+    "preview": "vite preview",
+    "build-deps": "cd react-crossword-ja-otomad && npm i && npm run build && cd ../"
   },
   "dependencies": {
     "@naari3/react-crossword-ja-otomad": "file:./react-crossword-ja-otomad",
