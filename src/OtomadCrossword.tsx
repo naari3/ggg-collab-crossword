@@ -8,22 +8,29 @@ import styled from "styled-components";
 import { data } from "./data";
 
 const CrosswordWrapper = styled.div.attrs((/* props */) => ({
-  className: "crossword",
+  className: "otomad-crossword",
 }))`
   width: 100%;
   display: flex;
   height: 90vh;
 
   @media (max-width: ${(props) => props.theme.columnBreakpoint}) {
-    display: block;
+    flex-direction: column;
   }
 `;
 
+const GridWrapper = styled.div.attrs((/* props */) => ({
+  className: "otomad-grid",
+}))`
+  display: flex;
+  flex: 2;
+`;
+
 const CluesWrapper = styled.div.attrs((/* props */) => ({
-  className: "clues",
+  className: "otomad-clues",
 }))`
   margin: 0 1em;
-  flex: 1 2 50%;
+  flex: 2;
   overflow-y: scroll;
 
   @media (max-width: ${(props) => props.theme.columnBreakpoint}) {
@@ -33,8 +40,6 @@ const CluesWrapper = styled.div.attrs((/* props */) => ({
 
   .direction {
     margin-bottom: 2em;
-    /* padding: 0 1em;
-    flex: 1 1 20%; */
 
     .header {
       margin-top: 0;
@@ -63,7 +68,9 @@ function OtomadCrossword() {
   return (
     <CrosswordProvider data={data}>
       <CrosswordWrapper>
-        <CrosswordGrid />
+        <GridWrapper>
+          <CrosswordGrid />
+        </GridWrapper>
         <CluesWrapper>
           <DirectionClues direction="across" label="ヨコのカギ" />
           <DirectionClues direction="down" label="タテのカギ" />

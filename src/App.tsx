@@ -1,4 +1,4 @@
-import OtomadCrossword from "./OtomadCrossWord";
+import OtomadCrossword from "./OtomadCrossword";
 
 function App() {
   return (
