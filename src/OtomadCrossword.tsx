@@ -12,7 +12,7 @@ const CrosswordWrapper = styled.div.attrs((/* props */) => ({
 }))`
   width: 100%;
   display: flex;
-  height: 90vh;
+  height: 85vh;
 
   @media (max-width: ${(props) => props.theme.columnBreakpoint}) {
     flex-direction: column;
