@@ -13,8 +13,8 @@ jobs:
 
       - name: Install and Build 🔧
         run: |
-          yarn
-          yarn build --base="/ggg-collab-crossword/"
+          npm i
+          npm run build -- --base="/ggg-collab-crossword/"
       - name: Deploy 🚀
         uses: peaceiris/actions-gh-pages@v3
         with:
